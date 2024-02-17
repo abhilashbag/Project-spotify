@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --bg-body: hsl(0, 0%, 0%);
+    --bg-side-color: hsl(0, 0%, 21%);
+    --left-tab-bg-clr: hsl(0, 0%, 14%);
+
+    --white: hsl(0, 0%, 100%);
+
+    --button-color: hsl(0, 0%, 96%);
+    --tab-hover-clr: hsl(0, 0%, 15%);
+
+    --play-logo: hsl(142, 76%, 50%);
+    --gradient-top:hsl(0, 0%, 12%);
+    --gradient-btm: hsl(0, 0%, 7%);
+
+    --small-text : hsl(0, 0%, 64%);
+
+    --scroll-track-color: hsl(0, 0%, 54%);
+
+    --bottom-banner-right: hsl(213, 88%, 64%);
+    --bottom-banner-left: hsl(311, 62%, 42%);
+
+    --ff-sans:"Overpass", sans-serif;
+    --font-title:24px;
+    --ff-small-text: 16px;
+    --ff-very-small:14px;
+    
+    --ff-weight-400: 400;
+    --ff-weight-700: 700;
+}
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    background-color: var(--bg-body);
+    font-size: var(--ff-small-text);
+    font-family: var(--ff-sans);
+}
+#wrapper{
+    min-height: 100vh;
+    min-width: 100%;
+   
+}
+#container{
+    min-height: 100vh;
+    min-width: 99%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.5rem;   
+    margin: 5px;
+}
+.inner-left{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 22.5rem;
+    background-color:var(--bg-body);
+}
+.inner-right{
+    width: 100%;
+    height: 99vh;
+    margin-left: 22.6rem;
+    background-image: linear-gradient(var(--gradient-top),var(--gradient-btm));
+}
+
+.header{
+    background-color:hsl(0, 0%, 6%);
+    display: flex;
+    align-items: center;
+    height: 60px;
+    position: sticky;
+    top: 5px;
+    right: 0;
+    justify-content: space-between;
+}
+.grid-container{
+    display: grid;
+    height: 18rem;
+    grid-template-columns: repeat(5,1fr);
+    gap: 1rem;
+}
+.container{
+    /* padding: 2rem; */
+}
+.logo-box{
+    border-radius: 8px;
+    border: 3px solid;
+    padding:0.1rem 1.8rem 0.5rem ;
+    background-color: var(--gradient-btm);
+}
+.logo-box li:nth-child(1) span{
+    margin-left: 0px !important;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+.logo-box li{
+    margin: 1rem 0;
+    list-style: none;
+}
+.logo-box li .active{
+    color: var(--white) !important;
+}
+.logo-box li i{
+    font-size: 25px;
+    color: var(--white);
+}
+.logo-box li span{
+    margin-left: 1rem;
+    color: var(--small-text);
+    font-size:var(--ff-small-text);
+    font-weight: var(--ff-weight-700);
+    font-style: normal
+}
+.library{
+    border: 3px solid;
+    margin-top: 0.2rem;
+    border-radius: 8px;
+    background-color: var(--gradient-btm);
+}
+.library h2{
+    color: var(--small-text);
+    padding:1rem 2rem ;
+    font-size: 16px;
+}
+.library i {
+    margin-right: 21px;
+    font-size: var(--ff-small-text);
+}
+.playlist{
+    margin: 5px 8px 26px 8px;
+    border-radius: 8px;
+    padding: 12px 20px;
+    line-height: 2.2;
+    background-color: var(--left-tab-bg-clr);
+    color: var(--white);
+    font-size: var(--ff-very-small);
+}
+.playlist p{
+    margin-bottom: 6px;
+}
+.btn{
+    padding: 6px 14px;
+    border-radius: 15px;
+    color: black;
+    font-size: 14px;
+    font-weight: 700;
+    transition: transform ease-in 100ms ;
+}
+.arrows{
+    margin-left: 1.5rem;
+}
+.arrows i{
+    padding-right: 8px;
+    color: gray;
+    font-size: 28px;
+}
+.login-box{
+    margin-right: 2rem;
+    color: var(--ff-small-text);
+}
+.login{
+    padding: 1rem 2.6rem;
+    border-radius: 3rem;
+    font-weight: var(--ff-weight-700);
+    color:var(--gradient-btm);
+    transition: transform ease-in 100ms ;
+}
+.sign-up{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: gray;
+    font-size: var(--ff-small-text);
+    font-weight: 700;
+    margin-right: 1.2rem;
+    transition: transform ease-in 100ms ;
+}
+.contain-main{
+    margin: .7rem 1.3rem;
+}
+
+.grid{
+    padding: 1.1rem;
+    border-radius: 10px;
+    background-image: linear-gradient(var(--gradient-top),var(--gradient-btm));
+    transition: background-color ease-in 100ms;
+}
+.ri-play-circle-fill{
+    color: var(--play-logo);
+    background-color: var(--bg-body);
+    right: 10px;
+    bottom: 86px;
+    position: absolute;
+    font-size: 3rem;
+    visibility: hidden;
+    transition: transform ease-in 100ms alternate;
+    border-radius: 50%;
+    
+}
+.title{
+    color: var(--white);
+    font-size: 24px;
+    font-weight: var(--ff-weight-700);
+    padding-bottom: .5rem;
+}
+.grid-box{
+    position: relative;
+}
+.grid-box img{
+    width: 100%;
+    height: 10.93rem;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.grid-box h3{
+    color: var(--white);
+    font-weight: 700;
+    padding: 5px 0;
+    opacity: 1;
+}
+.grid-box p{
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--small-text);
+}
+.footer-container{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    height: 70px;
+    background-color: red;
+    position: fixed;
+    width: 98%;
+    bottom: 10px;
+    left: 0;
+    z-index: 2;
+    margin: 0 .5rem;
+    color: var(--white);
+    background-image: linear-gradient(to left,var(--bottom-banner-right) ,var(--bottom-banner-left));
+}
+.link-section{
+    margin: 6rem 3rem 1rem;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 2rem;
+}
+.link-contain h4{
+    margin-bottom: 1rem;
+}
+.link-contain ul{
+    list-style: none;
+}
+.link-contain ul li{
+    color: var(--small-text);
+    padding: .3rem 0;
+    transition: color ease-in 100ms ;
+}
+.vis{
+    visibility: hidden;
+}
+.social-icon{
+   text-align: right;
+}
+.social-icon i{
+    margin: 0 5px;
+    padding: 1rem;
+    background-color: var(--gradient-btm);
+    border-radius: 50%;
+}
+
+/* all hover here */
+.btn:hover,
+.login:hover,
+.sign-up:hover{
+transform: scale(1.1);
+}
+.grid:hover .ri-play-circle-fill{
+visibility:visible ;
+transform: translateY(10px);
+}
+.grid:hover {
+    background-image: linear-gradient(to top,var(--gradient-btm),var(--gradient-top));
+    box-shadow:  1px 1px 10px 1px var(--gradient-btm);
+    /* border: 2px solid hsl(0, 0%, 12%); */
+}
+.link-contain ul li:hover{
+color: var(--white);
+text-decoration: underline;
+}
+.social-icon i:hover{
+    background-color: var(--small-text);
+}
+.logo-box li span:hover{
+    color: var(--white);
+}
+.library h2:hover{
+    color: var(--white);
+}
+.title:hover{
+    text-decoration: underline;
+}
